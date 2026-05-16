@@ -1,0 +1,15 @@
+name: Validate models
+on:
+  push:
+    branches: [ "main" ]
+  workflow_dispatch:
+permissions: read-all       
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install Ollama
+        run: curl -fsSL https://ollama.com/install.sh | sh
+      - name: Run the validation scripts
+        run: chmod +x test.sh; bash test.sh
