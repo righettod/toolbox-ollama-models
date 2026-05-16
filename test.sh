@@ -6,6 +6,7 @@ for i in {1..10}; do
   curl -sf http://localhost:11434 && break
   sleep 2
 done
+echo ""
 echo "[+] Build every models..."
 for file in $(find . -type f -name Modelfile)
 do
