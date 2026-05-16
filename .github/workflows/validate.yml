@@ -2,6 +2,9 @@ name: Validate models
 on:
   push:
     branches: [ "main" ]
+    paths:
+    - "**/Modelfile" 
+    - "test.sh"    
   workflow_dispatch:
 permissions: read-all       
 jobs:
