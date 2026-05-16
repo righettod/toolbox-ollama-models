@@ -5,7 +5,7 @@ pgrep -x ollama > /dev/null || ollama serve &
 for i in {1..10}; do
   curl -sf http://localhost:11434 && break
   sleep 2
-#done
+done
 for file in $(find . -type f -name Modelfile)
 do
   model_name=$(basename $(dirname "$file"))
